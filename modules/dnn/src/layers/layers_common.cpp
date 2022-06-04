@@ -156,7 +156,7 @@ void getPoolingKernelParams(const LayerParams &params, std::vector<size_t>& kern
 
     if (globalPooling[0] || globalPooling[1] || globalPooling[2])
     {
-        util::getStrideAndPadding(params, pads_begin, pads_end, strides, padMode);
+        util::getStrideAndPadding(params, pads_begin, pads_end, strides, padMode, globalPooling.size());
         if ((globalPooling[0] && params.has("kernel_d")) ||
             (globalPooling[1] && params.has("kernel_h")) ||
             (globalPooling[2] && params.has("kernel_w")) ||
